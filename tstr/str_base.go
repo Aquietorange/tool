@@ -1,5 +1,10 @@
 package tstr
 
+import (
+	"crypto/rand"
+	"math/big"
+)
+
 //截取文本 str =开始位置,len=截取长度, -1=截取到尾部
 func Substr(s string, str, lena int) string {
 	ss := []byte(s)
@@ -11,4 +16,14 @@ func Substr(s string, str, lena int) string {
 	} else {
 		return string(ss[str : str+lena])
 	}
+}
+
+//取随机字符串
+func RandString(len int) string {
+	bytes := make([]byte, len)
+	for i := 0; i < len; i++ {
+		b, _ := rand.Int(rand.Reader, big.NewInt(26))
+		bytes[i] = byte(b.Int64() + 65)
+	}
+	return string(bytes)
 }
