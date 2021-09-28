@@ -1,3 +1,3 @@
-module github.com/hujun528-dev/tool
+module github.com/Aquietorange/tool
 
 go 1.17

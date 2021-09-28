@@ -50,9 +50,11 @@ func (cir *CircleQueue) Getlines(strid int) []CircleQueueContent {
 
 //创建一个环形队列 指定 最大容量
 func NewCircleQueue(Maxl int) *CircleQueue {
-
+	if Maxl == 0 {
+		Maxl = 100
+	}
 	var cir = &CircleQueue{
-		Maxl: 100,
+		Maxl: Maxl,
 	}
 	return cir
 }
