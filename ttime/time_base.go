@@ -50,3 +50,17 @@ func Int13(t time.Time) int64 {
 func Int10(t time.Time) int64 {
 	return t.Unix()
 }
+
+//今日10位时间戳
+func Int10ToDay() int64 {
+
+	//var cstSh, _ = time.LoadLocation("UTC") //上海
+	t := time.Now()
+	t2 := time.Date(t.Year(), t.Month(), t.Day(), 0, 0, 0, 0, time.Local).Unix()
+	//a := t.Unix()
+	return t2
+	/* a := t2
+	b := a % (24 * 60 * 60)
+	return (a - b) */
+
+}

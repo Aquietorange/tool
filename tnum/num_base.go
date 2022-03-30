@@ -9,8 +9,14 @@ import (
 
 //取大于min小于 max 的 随机整数
 func Randint(min int64, max int64) int64 {
-	n, _ := rand.Int(rand.Reader, big.NewInt(max))
+	n, _ := rand.Int(rand.Reader, big.NewInt(max-min))
 	return n.Int64() + min
+}
+
+func Random() float64 {
+	n, _ := rand.Int(rand.Reader, big.NewInt(99749965075508026))
+
+	return float64(n.Int64()) / float64(math.Pow10(17))
 }
 
 //返回 百分比  例 0.051  返回 5.1

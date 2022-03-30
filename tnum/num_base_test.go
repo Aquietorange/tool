@@ -10,3 +10,10 @@ func Test_Randint(t *testing.T) {
 	//uuid, _ = ParseString(uuid.String())
 	fmt.Println(rint)
 }
+func Test_random(t *testing.T) {
+	for i := 0; i < 100; i++ {
+		rint := Random()
+		fmt.Println(rint)
+	}
+
+}

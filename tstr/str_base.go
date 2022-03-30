@@ -6,15 +6,21 @@ import (
 	"strings"
 )
 
-//截取文本 str =开始位置,len=截取长度, -1=截取到尾部
+//截取文本,支持中文， str =开始位置,lena=截取长度, -1=截取到尾部
 func Substr(s string, str, lena int) string {
-	ss := []byte(s)
+	// 	ss := []byte(s)
+
+	var ss []rune = []rune{}
+	for _, r := range s { //rune
+		ss = append(ss, r)
+	}
 	if str > len(ss) {
 		return ""
 	}
-	if lena == -1 {
+	if lena == -1 || str+lena >= len(s) {
 		return string(ss[str:])
 	} else {
+
 		return string(ss[str : str+lena])
 	}
 }
