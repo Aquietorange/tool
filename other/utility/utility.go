@@ -29,3 +29,76 @@ func SortFastInt(arr []int) []int {
 	myarr := append(append(low, mid...), height...)
 	return myarr
 }
+
+//选择  如果 a =零值 返回 f 否则返回t
+func Select[B any](a interface{}, t, f B) B {
+
+	/* if !a {
+		return f
+	} else {
+		return t
+	}
+
+	return t */
+
+	switch value := a.(type) {
+	case int:
+		return inttf(value, t, f)
+	case int8:
+		return inttf(int(value), t, f)
+	case int16:
+		return inttf(int(value), t, f)
+	case int32:
+		return inttf(int(value), t, f)
+	case int64:
+		return inttf(int(value), t, f)
+	case uint:
+		return inttf(int(value), t, f)
+	case string:
+		if value == "" {
+			return f
+		} else {
+			return t
+		}
+	case uint8:
+		return inttf(int(value), t, f)
+	case uint16:
+		return inttf(int(value), t, f)
+	case uint32:
+		return inttf(int(value), t, f)
+	case uint64:
+		return inttf(int(value), t, f)
+	case float32:
+		if value == 0 {
+			return f
+		} else {
+			return t
+		}
+	case float64:
+		if value == 0 {
+			return f
+		} else {
+			return t
+		}
+	case bool:
+		if !value {
+			return f
+		} else {
+			return t
+		}
+	default:
+		if value == nil {
+			return f
+		} else {
+			return t
+		}
+	}
+}
+
+func inttf[B any](value int, t, f B) B {
+	if value == 0 {
+		return f
+	} else {
+		return t
+	}
+}

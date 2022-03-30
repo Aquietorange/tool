@@ -17,3 +17,7 @@ func Test_SortFast(T *testing.T) {
 	offd = offd + int64(math.Ceil(1.0/6.0))
 	fmt.Println(offd)
 }
+
+func Test_Select(T *testing.T) {
+	fmt.Println(Select(0, 11, 22))
+}
