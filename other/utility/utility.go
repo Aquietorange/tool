@@ -30,7 +30,7 @@ func SortFastInt(arr []int) []int {
 	return myarr
 }
 
-//选择  如果 a =零值 返回 f 否则返回t
+//选择  如果 a =零值 返回 f 否则返回t   //aabb
 func Select[B any](a interface{}, t, f B) B {
 
 	/* if !a {
@@ -95,6 +95,7 @@ func Select[B any](a interface{}, t, f B) B {
 	}
 }
 
+//cc
 func inttf[B any](value int, t, f B) B {
 	if value == 0 {
 		return f
